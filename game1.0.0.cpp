@@ -7,11 +7,14 @@ using namespace std;
 
 class Hero {
 public:
+    Hero() {
+        doll = 0;
+    }
 	bool doll;
 	string status;
 };
 
-// Абстрактный базовый класс видов людей
+// РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ РІРёРґРѕРІ Р»СЋРґРµР№
 class Worker {
 public:
 	virtual void info() = 0;
@@ -19,7 +22,7 @@ public:
 };
 
 
-// Классы всех видов людей
+// РљР»Р°СЃСЃС‹ РІСЃРµС… РІРёРґРѕРІ Р»СЋРґРµР№
 class GoodWorker: public Worker {
 public:
 	void info() {
@@ -41,17 +44,17 @@ public:
 	}
 };
 
-//Абстрактный класс для создания действий после посещения рабочего места
+//РђР±СЃС‚СЂР°РєС‚РЅР°СЏ С„Р°Р±СЂРёРєР°(РєР»Р°СЃСЃ!!???) РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РґРµР№СЃС‚РІРёР№ РїРѕСЃР»Рµ РїРѕСЃРµС‰РµРЅРёСЏ СЂР°Р±РѕС‡РµРіРѕ РјРµСЃС‚Р°
 class Actions {
 public:
 	virtual void info() = 0;
-	virtual int consequence() = 0; //последствия после захода в рабочую точку
+	virtual int consequence() = 0; //РїРѕСЃР»РµРґСЃС‚РІРёСЏ РїРѕСЃР»Рµ Р·Р°С…РѕРґР° РІ СЂР°Р±РѕС‡СѓСЋ С‚РѕС‡РєСѓ
 };
 
 class BadStep: public Actions {
 public:
 	void info() {
-		cout << "Вы зашли не туда и вас выкинули из офиса..." << endl;
+		cout << "Р’С‹ Р·Р°С€Р»Рё РЅРµ С‚СѓРґР° Рё РІР°СЃ РІС‹РєРёРЅСѓР»Рё РёР· РѕС„РёСЃР°..." << endl;
 	}
 	int consequence() {
 		return 0;
@@ -61,33 +64,29 @@ public:
 class GoodStep: public Actions {
 public:
 	void info() {
-		cout << "Вы не зашли не туда. Можете дальше добираться до кабинета." << endl;
+		cout << "Р’РµСЃСЊРјР° СѓСЃРїРµС€РЅРѕ. РњРѕР¶РµС‚Рµ РґР°Р»СЊС€Рµ РґРѕР±РёСЂР°С‚СЊСЃСЏ РґРѕ РєР°Р±РёРЅРµС‚Р°." << endl;
 	}
 	int consequence() {
 		return 1;
 	}
-private:
-	//bool statusLife;
 };
 
 class VeryGoodStep: public Actions {
 public:
 	void info() {
-		cout << "Вы попали к очень хорошему человеку!" << endl;
-		cout << "Он дал вам куклу, чтобы во время неверного шага вы могли подкинуть ее злому человеку." << endl;
-		cout << "Тогда из офиса он выкенет ее, а не вас!" << endl;
+		cout << "Р’С‹ РїРѕРїР°Р»Рё Рє РѕС‡РµРЅСЊ С…РѕСЂРѕС€РµРјСѓ С‡РµР»РѕРІРµРєСѓ!" << endl;
+		cout << "РћРЅ РґР°Р» РІР°Рј РєСѓРєР»Сѓ, С‡С‚РѕР±С‹ РІРѕ РІСЂРµРјСЏ РЅРµРІРµСЂРЅРѕРіРѕ С€Р°РіР° РІС‹ РјРѕРіР»Рё РїРѕРґРєРёРЅСѓС‚СЊ РµРµ Р·Р»РѕРјСѓ С‡РµР»РѕРІРµРєСѓ." << endl;
+		cout << "РўРѕРіРґР° РёР· РѕС„РёСЃР° РѕРЅ РІС‹РєРµРЅРµС‚ РµРµ, Р° РЅРµ РІР°СЃ!" << endl;
 	}
 	int consequence() {
 		return 3;
 	}
-private:
-	//bool statusLife;
 };
 
 class WinStep: public Actions {
 public:
 	void info() {
-		cout << "Вы добрались до цели! Мои поздравления." << endl;
+		cout << "Р’С‹ РґРѕР±СЂР°Р»РёСЃСЊ РґРѕ С†РµР»Рё! РњРѕРё РїРѕР·РґСЂР°РІР»РµРЅРёСЏ." << endl;
 	}
 	int consequence() {
 		return 2;
@@ -97,26 +96,29 @@ public:
 class BlefGoodStep: public Actions {
 public:
 	void info() {
-		cout << "Вы не попали не туда! Тут очень дружелюбный человек." << endl;
+		cout << "Р’С‹ РµС‰Рµ РІ РѕС„РёСЃРµ! РўСѓС‚ РѕС‡РµРЅСЊ РґСЂСѓР¶РµР»СЋР±РЅС‹Р№ С‡РµР»РѕРІРµРє." << endl;
 	}
 	int consequence() {
 		string s;
-		cout << "Привет! Хочешь чаю? (да/нет)" << endl;
+		cout << "РџСЂРёРІРµС‚! РҐРѕС‡РµС€СЊ С‡Р°СЋ? (yes/no)" << endl;
 		cin >> s;
-		if (s == "да") {
-			cout << "Вы пьете чай и долго разговариваете." << endl;
-			cout << "Рабочий день подошел к концу. Офис закрылся, вас выгнали." << endl;
-			return 0;
-		} else if (s == "нет") {
-			return 1;
-		} else {
-			cout << "Сотрудник не понял ваш ответ :(" << endl;
-			cin >> s;
+		while (s != "no" or s != "yes") {
+			if (s == "yes") {
+				cout << "Р’С‹ РїСЊРµС‚Рµ С‡Р°Р№ Рё РґРѕР»РіРѕ СЂР°Р·РіРѕРІР°СЂРёРІР°РµС‚Рµ." << endl;
+				cout << "Р Р°Р±РѕС‡РёР№ РґРµРЅСЊ РїРѕРґРѕС€РµР» Рє РєРѕРЅС†Сѓ. РћС„РёСЃ Р·Р°РєСЂС‹Р»СЃСЏ, РІР°СЃ РІС‹РіРЅР°Р»Рё." << endl;
+				return 0;
+			} else if (s == "no") {
+			    cout << "РќСѓ С‡С‚Рѕ С‚С‹ С‚Р°РєРѕР№ Р·Р»РѕР№? РќРµР»СЊР·СЏ С‚Р°Рє.";
+				return 1;
+			} else {
+				cout << "РЎРѕС‚СЂСѓРґРЅРёРє РЅРµ РїРѕРЅСЏР» РІР°С€ РѕС‚РІРµС‚ :(" << endl;
+				cin >> s;
+			}
 		}
 	}
 };
 
-// Абстрактная фабрика для производства рабочих мест
+// РђР±СЃС‚СЂР°РєС‚РЅР°СЏ С„Р°Р±СЂРёРєР° РґР»СЏ РїСЂРѕРёР·РІРѕРґСЃС‚РІР° СЂР°Р±РѕС‡РёС… РјРµСЃС‚
 class WorkplaceFactory {
 public:
 	virtual Worker* createWorker() = 0;
@@ -126,7 +128,7 @@ public:
 };
 
 
-// Фабрика для создания плохих рабочих мест
+// Р¤Р°Р±СЂРёРєР° РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РїР»РѕС…РёС… СЂР°Р±РѕС‡РёС… РјРµСЃС‚
 class BadWorkplace: public WorkplaceFactory {
 public:
 	Worker* createWorker() {
@@ -141,7 +143,7 @@ public:
 };
 
 
-// Фабрика для создания хороших рабочих мест
+// Р¤Р°Р±СЂРёРєР° РґР»СЏ СЃРѕР·РґР°РЅРёСЏ С…РѕСЂРѕС€РёС… СЂР°Р±РѕС‡РёС… РјРµСЃС‚
 class GoodWorkplace: public WorkplaceFactory {
 public:
 	Worker* createWorker() {
@@ -155,13 +157,9 @@ public:
 	}
 };
 
-// Фабрика для создания ОЧЕНЬ хороших рабочих мест
+// Р¤Р°Р±СЂРёРєР° РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РћР§Р•РќР¬ С…РѕСЂРѕС€РёС… СЂР°Р±РѕС‡РёС… РјРµСЃС‚
 class VeryGoodWorkplace: public WorkplaceFactory {
 public:
-    VeryGoodWorkplace() {
-        Worker* w = new GoodWorker;
-        Actions* a = new VeryGoodStep;
-    }
 	Worker* createWorker() {
 		return new GoodWorker;
 	}
@@ -169,7 +167,7 @@ public:
 		return new VeryGoodStep;
 	}
 	void info() {
-		cout << "VeryGoodWP";
+		cout << "VGoodWP";
 	}
 };
 
@@ -186,7 +184,20 @@ public:
 	}
 };
 
-// Офис (класс), содержащий все виды рабочих мест
+class TeaWorkplace: public WorkplaceFactory {
+public:
+    Worker* createWorker() {
+        return new GoodWorker;
+    }
+    Actions* createActions() {
+        return new BlefGoodStep;
+    }
+    void info() {
+        cout << "TeaWP";
+    }
+};
+
+// РћС„РёСЃ (РєР»Р°СЃСЃ), СЃРѕРґРµСЂР¶Р°С‰РёР№ РІСЃРµ РІРёРґС‹ СЂР°Р±РѕС‡РёС… РјРµСЃС‚
 class Office{
 public:
 	Office(Hero* h, int n, int m): h(*h), place(n) {}
@@ -200,7 +211,7 @@ public:
 			cout << endl;
 		}
 	}
-	vector< vector<WorkplaceFactory*> > place; //карта офиса
+	vector< vector<WorkplaceFactory*> > place; //РєР°СЂС‚Р° РѕС„РёСЃР°
 protected:
 	int n;
 	int m;
@@ -208,17 +219,18 @@ protected:
 };
 
 
-// Здесь создается наш офис
+// Р—РґРµСЃСЊ СЃРѕР·РґР°РµС‚СЃСЏ РЅР°С€ РѕС„РёСЃ
 class Game {
 public:
 	Game(Hero* h1, int n, int m): h1(h1), n(n), m(m) {}
-	Office* createOffice() { //Пример создания офиса
+	Office* createOffice() { //РџСЂРёРјРµСЂ СЃРѕР·РґР°РЅРёСЏ РѕС„РёСЃР°
 		srand(time(0));
 		Office* o1 = new Office(h1, n, m);
 		WorkplaceFactory* b = new BadWorkplace();
 		WorkplaceFactory* g = new GoodWorkplace();
 		WorkplaceFactory* vg = new VeryGoodWorkplace();
 		WorkplaceFactory* w = new WinWorkplace();
+		WorkplaceFactory* t = new TeaWorkplace();
 		for (int i = 0; i < n; i++) {
             		o1->place[0].push_back(b);
             		o1->place[m - 1].push_back(b);
@@ -233,8 +245,12 @@ public:
 			} else {
 				for (int j = 1; j < n - 1; j++) {
 					int index = rand() % 100;
-					if (index > 10) {
+					if (index > 10 && index < 65) {
 						o1->place[i].push_back(g);
+					} else if (index > 64 && index < 75) {
+					    o1->place[i].push_back(t);
+					} else if (index > 74) {
+						o1->place[i].push_back(b);
 					} else {
 						o1->place[i].push_back(vg);
 					}
@@ -244,6 +260,80 @@ public:
 		}
 		return o1;
 	}
+	void play(Office& of) {
+		cout << "РџСЂРёРІРµС‚. РўС‹ РїРѕРїР°Р» РІ РѕС„РёСЃ, РіРґРµ СЃС‚СЂРµРјРёС€СЊСЃСЏ РЅР°Р№С‚Рё РєР°Р±РёРЅРµС‚ РґР»СЏ РїСЂРѕС…РѕР¶РґРµРЅРёСЏ СЃРѕР±РµСЃРµРґРѕРІР°РЅРёСЏ." << endl;
+		cout << "РР·Р±РµРіР°Р№ С‚РѕРіРѕ, С‡С‚РѕР±С‹ С‚РµР±СЏ РІС‹РєРёРЅСѓР»Рё РёР· РѕС„РёСЃР°." << endl;
+		cout << "Р”Р»СЏ С…РѕРґРѕРІ РїРѕ Р»Р°Р±РёСЂРёРЅС‚Сѓ РёСЃРїРѕР»СЊР·СѓР№ РєРѕРјР°РЅРґС‹:" << endl;
+		cout << "w - РІРїРµСЂРґ(forward)" << endl;
+		cout << "s - РЅР°Р·Р°Рґ(back)" << endl;
+		cout << "a - РЅР°Р»РµРІРѕ(left)" << endl;
+		cout << "d - РЅР°РїСЂР°РІРѕ(right)" << endl;
+		WorkplaceFactory* it;
+		int line;
+		int column;
+		line = 1;
+		column = m - 2;
+		it = of.place[line][column];
+		while (true) {
+			bool flag = 1;
+			char step;
+			cout << "РљСѓРґР° РїРѕР№РґРµРј? ";
+			cin >> step;
+			cout << endl;
+			switch (step) {
+            case 'w':
+				line--;
+				break;
+            case 's':
+				line++;
+				break;
+            case 'a':
+				column--;
+				break;
+            case 'd':
+				column++;
+				break;
+            default:
+				flag = 0;
+				cout << "РўС‹ РІРёРґРёРјРѕ РІСЂРµР·Р°Р»СЃСЏ РІ СЃС‚РµРЅРєСѓ... Р”Р°РІР°Р№ РµС‰Рµ СЂР°Р·" << endl;
+				break;
+			}
+			bool flag2 = 1;
+			if (flag == 1) {
+				it = of.place[line][column];
+				it->createActions()->info();
+				switch (it->createActions()->consequence()) {
+                case 0:
+                    if (h1->doll == 0) {
+                        flag2 = 0;
+                    } else {
+                        h1->doll = 0;
+                        cout << "РќРѕ РЅРµС‚ :) РЈ РІР°СЃ Р¶Рµ РµСЃС‚СЊ РєСѓРєР»Р°. Р’С‹ СЃРїР°СЃР°РµС‚РµСЃСЊ, РѕС‚РґР°РІР°СЏ РµРµ." << endl;
+                    }
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    flag2 = 0;
+                    break;
+                case 3:
+                    if (h1->doll == 0){
+                        h1->doll = 1;
+                    } else {
+                        cout << "Р’С‹ РІР·СЏР»Рё СЃСЂР°Р·Сѓ 2 РєСѓРєР»С‹. Р’Р°Рј РѕС‡РµРЅСЊ С‚СЏР¶РµР»Рѕ РёС… РЅРѕСЃРёС‚СЊ СЃ СЃРѕР±РѕР№." << endl;
+                        cout << "РќРѕ РІС‹ РЅРµ С…РѕС‚РёС‚Рµ РѕСЃС‚Р°РІР»СЏС‚СЊ РЅРё РѕРґРЅСѓ РёР· РЅРёС… Рё РѕСЃС‚Р°РµС‚РµСЃСЊ СЃРёРґРµС‚СЊ СЃ РЅРёРјРё РІ РѕС„РёСЃРµ." << endl;
+                        cout << "Р’ РєРѕРЅС†Рµ СЂР°Р±РѕС‡РµРіРѕ РґРЅСЏ РІР°СЃ Р·Р°СЃС‚Р°РІР»СЏСЋС‚ РїРѕРєРёРЅСѓС‚СЊ РѕС„РёСЃ..." << endl;
+                        flag2 = 0;
+                    }
+                    break;
+				}
+				//int act;
+				//act = *it;
+			}
+			if (flag2 == 0)
+                break;
+		}
+	}
 	Hero* h1;
 protected:
     int n;
@@ -252,13 +342,14 @@ protected:
 
 
 int main(){
+    setlocale(LC_ALL, "Russian");
 	srand(time(0));
 	Hero* h1 = new Hero;
 	Game game(h1, 10, 10);
 	GoodWorkplace gf;
 	Office * of = game.createOffice();
+	game.play(* of);
 	cout << "Office:" << endl;
 	of->info();
 	return 0;
-	// ...
 }
