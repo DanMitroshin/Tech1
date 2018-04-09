@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1523119348 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\actions.cpp
+	<iostream>
+	"constActions.cpp"
+	"actions.h"
+
+1523116327 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\workers.cpp
+	<iostream>
+	"workers.h"
+	"constWorkers.cpp"
+
+1523116576 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\main.cpp
+	<iostream>
+	<vector>
+	<ctime>
+	<random>
+	<string>
+	"classgame.cpp"
+
+1523130468 c:\users\alfoc\desktop\Учеба\game1\bestgameever\classgame.cpp
+	<iostream>
+	<vector>
+	"constGame.cpp"
+	<ctime>
+	<random>
+	<string>
+	"workplace.h"
+
+1523115065 c:\users\alfoc\desktop\Учеба\game1\bestgameever\workplace.cpp
+	"workers.cpp"
+	"workplace.h"
+	"actions.cpp"
+	<iostream>
+
+1523113646 c:\users\alfoc\desktop\Учеба\game1\bestgameever\workers.cpp
+	<iostream>
+	"workers.h"
+
+1523114327 c:\users\alfoc\desktop\Учеба\game1\bestgameever\actions.cpp
+	<iostream>
+	"actions.h"
+
+1523118522 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\workplace.cpp
+	"workplace.h"
+	"constWorkplace.cpp"
+	<iostream>
+
+1523130468 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\classgame.cpp
+	<iostream>
+	<vector>
+	"constGame.cpp"
+	<ctime>
+	<random>
+	<string>
+	"workplace.h"
+
+1523115373 c:\users\alfoc\desktop\Учеба\game1\bestgameever\workers.h
+	<iostream>
+
+1523114327 c:\users\alfoc\desktop\Учеба\game1\bestgameever\actions.h
+	<iostream>
+
+1523114863 c:\users\alfoc\desktop\Учеба\game1\bestgameever\workplace.h
+	"workers.h"
+	"actions.h"
+	<iostream>
+
+1523116039 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\constworkers.cpp
+	<iostream>
+	<string>
+
+1523116344 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constgame.h
+	<iostream>
+	<string>
+
+1523116039 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constworkers.cpp
+	<iostream>
+	<string>
+
+1523130030 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\constgame.cpp
+	<iostream>
+	<string>
+
+1523130030 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constgame.cpp
+	<iostream>
+	<string>
+
+1523118522 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\constworkplace.cpp
+	<iostream>
+	<string>
+
+1523118522 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constworkplace.cpp
+	<iostream>
+	<string>
+
+1523119348 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\constactions.cpp
+	<iostream>
+	<string>
+
+1523119348 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constactions.cpp
+	<iostream>
+	<string>
+
