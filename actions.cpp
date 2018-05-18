@@ -9,6 +9,11 @@ void BadStep::info() {
     cout << BadS;
 }
 
+void BadStep::ChangeStatus() {
+    //status = (status + 1) % 2;
+    status = 1;
+}
+
 int BadStep::consequence() {
     if (status == 1) {
         cout << yourElixir;
