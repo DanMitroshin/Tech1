@@ -5,22 +5,20 @@ using namespace std;
 class Actions {
 public:
 	virtual void info() = 0;
-	virtual int consequence() = 0; //ïîñëåäñòâèÿ ïîñëå çàõîäà â ðàáî÷óþ òî÷êó
-	void ChangeStatus() {
-        status = (status + 1) % 2;
-	}
+	virtual int consequence() = 0; //последствия после захода в рабочую точку
+	virtual void ChangeStatus() {}
 private:
     int status;
 };
 
 class BadStep: public Actions {
 public:
-    BadStep() {
-        status = 0;
-    }
+	BadStep() {
+		status = 0;
+	}
+	void ChangeStatus();
 	void info();
 	int consequence();
-	void ChangeStatus();
 private:
     int status;
 };
