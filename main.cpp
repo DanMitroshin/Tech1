@@ -3,7 +3,7 @@
 #include <ctime>
 #include <random>
 #include <string>
-#include "classgame.cpp"
+#include "game_office.h"
 using namespace std;
 
 

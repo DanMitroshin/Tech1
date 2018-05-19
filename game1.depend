@@ -11,15 +11,15 @@
 	"workers.h"
 	"constWorkers.cpp"
 
-1526635674 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\main.cpp
+1526726392 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\main.cpp
 	<iostream>
 	<vector>
 	<ctime>
 	<random>
 	<string>
-	"classgame.cpp"
+	"game_office.h"
 
-1526641576 c:\users\alfoc\desktop\Учеба\game1\bestgameever\classgame.cpp
+1526726282 c:\users\alfoc\desktop\Учеба\game1\bestgameever\classgame.cpp
 	<iostream>
 	<vector>
 	<list>
@@ -27,7 +27,7 @@
 	<ctime>
 	<random>
 	<string>
-	"workplace.h"
+	"game_office.h"
 	<vector>
 	<list>
 	"constGame.cpp"
@@ -36,6 +36,7 @@
 	<string>
 	"workplace.h"
 	<vector>
+	<list>
 	"constGame.cpp"
 	<ctime>
 	<random>
@@ -61,7 +62,7 @@
 	"constWorkplace.cpp"
 	<iostream>
 
-1526641576 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\classgame.cpp
+1526728098 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\classgame.cpp
 	<iostream>
 	<vector>
 	<list>
@@ -69,7 +70,7 @@
 	<ctime>
 	<random>
 	<string>
-	"workplace.h"
+	"game_office.h"
 	<vector>
 	<list>
 	"constGame.cpp"
@@ -78,6 +79,7 @@
 	<string>
 	"workplace.h"
 	<vector>
+	<list>
 	"constGame.cpp"
 	<ctime>
 	<random>
@@ -108,11 +110,11 @@
 	<iostream>
 	<string>
 
-1526588290 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\constgame.cpp
+1526728436 source:c:\users\alfoc\desktop\Учеба\game1\bestgameever\constgame.cpp
 	<iostream>
 	<string>
 
-1526588290 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constgame.cpp
+1526728436 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constgame.cpp
 	<iostream>
 	<string>
 
@@ -131,4 +133,10 @@
 1524388869 c:\users\alfoc\desktop\Учеба\game1\bestgameever\constactions.cpp
 	<iostream>
 	<string>
+
+1526729466 c:\users\alfoc\desktop\Учеба\game1\bestgameever\game_office.h
+	<iostream>
+	<vector>
+	<list>
+	"workplace.h"
 
