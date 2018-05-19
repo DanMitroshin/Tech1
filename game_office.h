@@ -130,7 +130,6 @@ private:
     void _Notify();
 };
 
-// Çäåñü ñîçäàåòñÿ íàø îôèñ è ïðîèñõîäèò èãðà
 class Game {
 public:
 	Game(IObserver* h1, int n, int m): h1(h1), n(n), m(m) {}
